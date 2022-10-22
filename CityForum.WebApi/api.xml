@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CityForum.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:CityForum.WebAPI.AppConfiguration.ApplicationExtensions.AppExtensions">
+            <summary>
+            Application builder extensions
+            </summary>
+        </member>
+        <member name="M:CityForum.WebAPI.AppConfiguration.ApplicationExtensions.AppExtensions.UseSerilogConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use serilog configuration
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:CityForum.WebAPI.AppConfiguration.ApplicationExtensions.AppExtensions.UseSwaggerConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use swagger configuration
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions">
+            <summary>
+            Services extensions
+            </summary>
+        </member>
+        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+            Add serilog configuration
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add swagger settings
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddVersioningConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure versioning
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>
