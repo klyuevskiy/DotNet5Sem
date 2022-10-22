@@ -30,7 +30,7 @@
 6. возможно будет дополняться
 
 # Логическая модель данных
-![Alt text](https://github.com/klyuevskiy/DotNet5Sem/blob/main/LogicalDBModel.png)
+![Alt text](https://github.com/klyuevskiy/DotNet5Sem/blob/master/LogicalDBModel.png)
 
 Модель отражает пока что только минимальную функциональность. Возможно будет дополняться.</br>
 Логин пользователя и название темы должны быть уникальные, поэтому сделал их альтернтивными ключами</br>
