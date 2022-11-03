@@ -28,11 +28,12 @@ public class Context : DbContext
         builder.Entity<Topic>().HasKey(x => x.Id);
         builder.Entity<Topic>().HasIndex(x => x.Name)
                                 .IsUnique();
-        // one-to-many User-Message
+
+        // one-to-many User-Topic
         builder.Entity<Topic>().HasOne(x => x.CreatedUser)
                                 .WithMany(x => x.CreatedTopics)
                                 .HasForeignKey(x => x.CreatedUserId)
-                                .OnDelete(DeleteBehavior.Cascade);
+                                .OnDelete(DeleteBehavior.SetNull);
 
         #endregion
 
@@ -40,15 +41,17 @@ public class Context : DbContext
         
         builder.Entity<Message>().ToTable("messages");
         builder.Entity<Message>().HasKey(x => x.Id);
-        // one-to-many User-Message
-        builder.Entity<Message>().HasOne(x => x.SendingUser)
-                                    .WithMany(x => x.SendingMessages)
-                                    .HasForeignKey(x => x.SendingUserId)
-                                    .OnDelete(DeleteBehavior.Cascade);
+        
         // one-to-many Topic-Message
         builder.Entity<Message>().HasOne(x => x.Topic)
                                     .WithMany(x => x.Messages)
                                     .HasForeignKey(x => x.TopicId)
+                                    .OnDelete(DeleteBehavior.Cascade);
+        
+        // one-to-many User-Message
+        builder.Entity<Message>().HasOne(x => x.SendingUser)
+                                    .WithMany(x => x.SendingMessages)
+                                    .HasForeignKey(x => x.SendingUserId)
                                     .OnDelete(DeleteBehavior.Cascade);
 
         #endregion
