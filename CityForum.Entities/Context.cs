@@ -17,6 +17,8 @@ public class Context : DbContext
 
         builder.Entity<User>().ToTable("users");
         builder.Entity<User>().HasKey(x => x.Id);
+        builder.Entity<User>().HasIndex(x => x.Login)
+                                .IsUnique();
 
         #endregion
 
@@ -24,6 +26,8 @@ public class Context : DbContext
 
         builder.Entity<Topic>().ToTable("topics");
         builder.Entity<Topic>().HasKey(x => x.Id);
+        builder.Entity<Topic>().HasIndex(x => x.Name)
+                                .IsUnique();
         // one-to-many User-Message
         builder.Entity<Topic>().HasOne(x => x.CreatedUser)
                                 .WithMany(x => x.CreatedTopics)
