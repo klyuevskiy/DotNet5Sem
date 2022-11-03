@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityForum.WebApi", "CityForum.WebApi\CityForum.WebApi.csproj", "{E230E0F7-4BDE-4304-B453-486EF35C9D6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityForum.Entities", "CityForum.Entities\CityForum.Entities.csproj", "{3398AC55-EF6F-44BD-8F93-3AF0B61FD840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityForum.Repository", "CityForum.Repository\CityForum.Repository.csproj", "{875F4F18-525A-4E65-A4F6-03CB0901DE2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{E230E0F7-4BDE-4304-B453-486EF35C9D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E230E0F7-4BDE-4304-B453-486EF35C9D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E230E0F7-4BDE-4304-B453-486EF35C9D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3398AC55-EF6F-44BD-8F93-3AF0B61FD840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3398AC55-EF6F-44BD-8F93-3AF0B61FD840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3398AC55-EF6F-44BD-8F93-3AF0B61FD840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3398AC55-EF6F-44BD-8F93-3AF0B61FD840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875F4F18-525A-4E65-A4F6-03CB0901DE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875F4F18-525A-4E65-A4F6-03CB0901DE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875F4F18-525A-4E65-A4F6-03CB0901DE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875F4F18-525A-4E65-A4F6-03CB0901DE2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

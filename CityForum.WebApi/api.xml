@@ -26,6 +26,12 @@
             Services extensions
             </summary>
         </member>
+        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add DB context configuration
+            </summary>
+            <param name="builder"></param>
+        </member>
         <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
             <summary>
             Add serilog configuration
