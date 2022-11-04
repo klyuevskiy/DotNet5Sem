@@ -50,5 +50,21 @@
             </summary>
             <param name="services"></param>
         </member>
+        <member name="T:CityForum.WebApi.Controllers.UsersController">
+            <summary>
+            Doctors endpoints
+            </summary>
+        </member>
+        <member name="M:CityForum.WebApi.Controllers.UsersController.#ctor(CityForum.Repository.IRepository{CityForum.Entities.Models.User})">
+            <summary>
+            Users controller
+            </summary>
+        </member>
+        <member name="M:CityForum.WebApi.Controllers.UsersController.GetUsers">
+            <summary>
+            Get users
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
