@@ -5,11 +5,11 @@ namespace CityForum.Entities;
 
 public class Context : DbContext
 {
-    public DbSet<User> Users {get; set;}
-    public DbSet<Topic> Topics {get; set;}
-    public DbSet<Message> Messages {get; set;}
+    public DbSet<User> Users { get; set; }
+    public DbSet<Topic> Topics { get; set; }
+    public DbSet<Message> Messages { get; set; }
 
-    public Context(DbContextOptions<Context> options) : base(options) {}
+    public Context(DbContextOptions<Context> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -38,16 +38,16 @@ public class Context : DbContext
         #endregion
 
         #region Messages
-        
+
         builder.Entity<Message>().ToTable("messages");
         builder.Entity<Message>().HasKey(x => x.Id);
-        
+
         // one-to-many Topic-Message
         builder.Entity<Message>().HasOne(x => x.Topic)
                                     .WithMany(x => x.Messages)
                                     .HasForeignKey(x => x.TopicId)
                                     .OnDelete(DeleteBehavior.Cascade);
-        
+
         // one-to-many User-Message
         builder.Entity<Message>().HasOne(x => x.SendingUser)
                                     .WithMany(x => x.SendingMessages)

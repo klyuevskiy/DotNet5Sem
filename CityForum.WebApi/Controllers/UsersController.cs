@@ -54,9 +54,9 @@ namespace CityForum.WebApi.Controllers
                 u1 = _repository.Save(u1);
                 u2 = _repository.Save(u2);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                
+
             }
 
             var users = _repository.GetAll();

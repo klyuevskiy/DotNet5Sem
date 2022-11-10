@@ -2,9 +2,9 @@ namespace CityForum.Entities.Models;
 
 public abstract class BaseEntity
 {
-    public Guid Id { get; set;}
-    public DateTime CreationTime {get; set;}
-    public DateTime ModificationTime {get; set;}
+    public Guid Id { get; set; }
+    public DateTime CreationTime { get; set; }
+    public DateTime ModificationTime { get; set; }
 
     public bool IsNew()
     {
