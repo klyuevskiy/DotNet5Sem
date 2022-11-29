@@ -1,5 +1,5 @@
 using CityForum.WebApi.AppConfiguration.ServicesExtensions;
-using CityForum.WebAPI.AppConfiguration.ApplicationExtensions;
+using CityForum.WebApi.AppConfiguration.ApplicationExtensions;
 using CityForum.Repository;
 using CityForum.Services;
 using Serilog;

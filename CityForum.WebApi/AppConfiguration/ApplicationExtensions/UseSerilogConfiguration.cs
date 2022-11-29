@@ -1,6 +1,6 @@
 using Serilog;
 
-namespace CityForum.WebAPI.AppConfiguration.ApplicationExtensions
+namespace CityForum.WebApi.AppConfiguration.ApplicationExtensions
 {
     public static partial class AppExtensions
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
-namespace CityForum.WebAPI.AppConfiguration.ApplicationExtensions
+namespace CityForum.WebApi.AppConfiguration.ApplicationExtensions
 {
     /// <summary>
     /// Application builder extensions
