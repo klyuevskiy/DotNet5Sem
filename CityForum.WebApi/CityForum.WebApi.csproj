@@ -7,6 +7,10 @@
     <DocumentationFile>api.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.2.2"/>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2"/>
+    <PackageReference Include="AutoMapper" Version="12.0.0"/>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0"/>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
     <PackageReference Include="Serilog.Expressions" Version="3.4.1" />
@@ -20,5 +24,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CityForum.Entities\CityForum.Entities.csproj" />
     <ProjectReference Include="..\CityForum.Repository\CityForum.Repository.csproj" />
+    <ProjectReference Include="..\CityForum.Services\CityForum.Services.csproj" />
   </ItemGroup>
 </Project>

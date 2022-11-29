@@ -1,14 +1,12 @@
-using System.Globalization;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
-using CityForum.Entities.Models;
-using CityForum.Repository;
+using AutoMapper;
+using CityForum.Services.Abstract;
+using CityForum.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityForum.WebApi.Controllers
 {
     /// <summary>
-    /// Doctors endpoints
+    /// Users endpoints
     /// </summary>
     [ProducesResponseType(200)]
     [ApiVersion("1.0")]
@@ -16,52 +14,45 @@ namespace CityForum.WebApi.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private IRepository<User> _repository;
+        private readonly IUserService userService;
+        private readonly IMapper mapper;
 
         /// <summary>
         /// Users controller
         /// </summary>
-        public UsersController(IRepository<User> repository)
+        public UsersController(IUserService userService, IMapper mapper)
         {
-            _repository = repository;
+            this.userService = userService;
+            this.mapper = mapper;
         }
 
-        /// <summary>
-        /// Get users
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public IActionResult GetUsers()
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult DeleteUser([FromRoute] Guid id)
         {
-            var u1 = new User()
-            {
-                Login = "Alasld",
-                PasswordHash = "125"
-            };
-
-            var u2 = new User()
-            {
-                Login = "ASDLl",
-                PasswordHash = "1111"
-            };
-
             try
             {
-                u1 = _repository.Save(u1);
-                u2 = _repository.Save(u2);
-                u1.PasswordHash = "aslkdjlksadjl";
-                u2.PasswordHash = "uiqe78213ehadsls";
-                u1 = _repository.Save(u1);
-                u2 = _repository.Save(u2);
+                userService.DeleteUser(id);
+                return Ok();
             }
             catch (Exception e)
             {
-
+                return BadRequest(e);
             }
+        }
 
-            var users = _repository.GetAll();
-
-            return Ok(users);
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetUser([FromRoute] Guid id)
+        {
+            try
+            {
+                return Ok(mapper.Map<UserResponse>(userService.GetUser(id)));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
         }
     }
 }

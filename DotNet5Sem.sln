@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityForum.Entities", "CityF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityForum.Repository", "CityForum.Repository\CityForum.Repository.csproj", "{875F4F18-525A-4E65-A4F6-03CB0901DE2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityForum.Services", "CityForum.Services\CityForum.Services.csproj", "{EAA27438-839E-425B-A5B7-2AC3744DC850}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{875F4F18-525A-4E65-A4F6-03CB0901DE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{875F4F18-525A-4E65-A4F6-03CB0901DE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{875F4F18-525A-4E65-A4F6-03CB0901DE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA27438-839E-425B-A5B7-2AC3744DC850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA27438-839E-425B-A5B7-2AC3744DC850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA27438-839E-425B-A5B7-2AC3744DC850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA27438-839E-425B-A5B7-2AC3744DC850}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

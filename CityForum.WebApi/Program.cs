@@ -1,26 +1,24 @@
 using CityForum.WebApi.AppConfiguration.ServicesExtensions;
 using CityForum.WebAPI.AppConfiguration.ApplicationExtensions;
-using CityForum.Entities;
 using CityForum.Repository;
-using Microsoft.EntityFrameworkCore;
+using CityForum.Services;
 using Serilog;
 
 var configuration = new ConfigurationBuilder()
-.AddJsonFile("appsettings.json")
+.AddJsonFile("appsettings.json", optional: false)
 .Build();
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.AddSerilogConfiguration();
 builder.Services.AddDbContextConfiguration(configuration);
 builder.Services.AddVersioningConfiguration();
+builder.Services.AddMapperConfiguration();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerConfiguration();
+builder.Services.AddRepositoryConfiguration();
+builder.Services.AddBusinessLogicConfiguration();
 
-builder.Services.AddScoped<DbContext, Context>();
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 var app = builder.Build();
 

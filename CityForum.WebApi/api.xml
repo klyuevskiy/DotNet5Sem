@@ -32,6 +32,12 @@
             </summary>
             <param name="builder"></param>
         </member>
+        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddMapperConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add services configuration
+            </summary>
+            <param name="builder"></param>
+        </member>
         <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
             <summary>
             Add serilog configuration
@@ -50,21 +56,35 @@
             </summary>
             <param name="services"></param>
         </member>
-        <member name="T:CityForum.WebApi.Controllers.UsersController">
+        <member name="T:CityForum.WebApi.Controllers.MessagesController">
             <summary>
-            Doctors endpoints
+            messages endpoints
             </summary>
         </member>
-        <member name="M:CityForum.WebApi.Controllers.UsersController.#ctor(CityForum.Repository.IRepository{CityForum.Entities.Models.User})">
+        <member name="M:CityForum.WebApi.Controllers.MessagesController.#ctor(CityForum.Services.Abstract.IMessageService,AutoMapper.IMapper)">
             <summary>
             Users controller
             </summary>
         </member>
-        <member name="M:CityForum.WebApi.Controllers.UsersController.GetUsers">
+        <member name="T:CityForum.WebApi.Controllers.TopicController">
             <summary>
-            Get users
+            topics endpoints
             </summary>
-            <returns></returns>
+        </member>
+        <member name="M:CityForum.WebApi.Controllers.TopicController.#ctor(CityForum.Services.Abstract.ITopicService,AutoMapper.IMapper)">
+            <summary>
+            Users controller
+            </summary>
+        </member>
+        <member name="T:CityForum.WebApi.Controllers.UsersController">
+            <summary>
+            Users endpoints
+            </summary>
+        </member>
+        <member name="M:CityForum.WebApi.Controllers.UsersController.#ctor(CityForum.Services.Abstract.IUserService,AutoMapper.IMapper)">
+            <summary>
+            Users controller
+            </summary>
         </member>
     </members>
 </doc>
