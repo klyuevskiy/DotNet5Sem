@@ -22,7 +22,7 @@ public class UserService : IUserService
         User? user = usersRepository.GetById(id);
         if (user == null)
         {
-            throw new Exception($"User not found, id = {id}");
+            throw new Exception("User not found");
         }
         return user;
     }
@@ -35,5 +35,18 @@ public class UserService : IUserService
     public UserModel GetUser(Guid id)
     {
         return mapper.Map<UserModel>(GetUserFromRepository(id));
+    }
+
+    public PageModel<UserModel> GetUsers(int limit = 20, int offset = 0)
+    {
+        var users = usersRepository.GetAll();
+        int totalCount = users.Count();
+        var chunck = users.OrderBy(x => x.CreationTime).Skip(offset).Take(limit);
+
+        return new PageModel<UserModel>()
+        {
+            Items = mapper.Map<IEnumerable<UserModel>>(users),
+            TotalCount = totalCount
+        };
     }
 }

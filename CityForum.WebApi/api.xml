@@ -4,18 +4,18 @@
         <name>CityForum.WebApi</name>
     </assembly>
     <members>
-        <member name="T:CityForum.WebAPI.AppConfiguration.ApplicationExtensions.AppExtensions">
+        <member name="T:CityForum.WebApi.AppConfiguration.ApplicationExtensions.AppExtensions">
             <summary>
             Application builder extensions
             </summary>
         </member>
-        <member name="M:CityForum.WebAPI.AppConfiguration.ApplicationExtensions.AppExtensions.UseSerilogConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+        <member name="M:CityForum.WebApi.AppConfiguration.ApplicationExtensions.AppExtensions.UseSerilogConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             Use serilog configuration
             </summary>
             <param name="app"></param>
         </member>
-        <member name="M:CityForum.WebAPI.AppConfiguration.ApplicationExtensions.AppExtensions.UseSwaggerConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+        <member name="M:CityForum.WebApi.AppConfiguration.ApplicationExtensions.AppExtensions.UseSwaggerConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             Use swagger configuration
             </summary>

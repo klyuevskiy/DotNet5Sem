@@ -37,7 +37,7 @@ namespace CityForum.WebApi.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
 
@@ -51,7 +51,20 @@ namespace CityForum.WebApi.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetUsers([FromQuery] int limit = 20, [FromQuery] int offset = 0)
+        {
+            try
+            {
+                return Ok(mapper.Map<PageResponse<UserResponse>>(userService.GetUsers(limit, offset)));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }
