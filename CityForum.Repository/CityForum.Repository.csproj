@@ -9,5 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CityForum.Entities\CityForum.Entities.csproj" />
+    <ProjectReference Include="..\CityForum.Shared\CityForum.Shared.csproj"/>
   </ItemGroup>
 </Project>

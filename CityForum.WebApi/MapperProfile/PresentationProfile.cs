@@ -14,6 +14,13 @@ public class PresentationProfile : Profile
 
         #endregion
 
+        #region Auth
+
+        CreateMap<RegisterUserRequest, RegisterUserModel>();
+        CreateMap<LoginUserRequest, LoginUserModel>();
+
+        #endregion
+
         #region Users
 
         CreateMap<UserModel, UserResponse>();

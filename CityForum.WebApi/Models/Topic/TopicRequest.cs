@@ -3,7 +3,7 @@ using FluentValidation.Results;
 
 namespace CityForum.WebApi.Models;
 
-public class TopicRequest
+public abstract class TopicRequest
 {
     public string Name { get; set; }
 

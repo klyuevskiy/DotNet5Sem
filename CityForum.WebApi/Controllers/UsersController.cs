@@ -1,6 +1,7 @@
 using AutoMapper;
 using CityForum.Services.Abstract;
 using CityForum.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityForum.WebApi.Controllers
@@ -27,6 +28,7 @@ namespace CityForum.WebApi.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("{id}")]
         public IActionResult DeleteUser([FromRoute] Guid id)
         {

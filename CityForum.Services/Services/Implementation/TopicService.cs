@@ -3,6 +3,8 @@ using CityForum.Entities.Models;
 using CityForum.Repository;
 using CityForum.Services.Abstract;
 using CityForum.Services.Models;
+using CityForum.Shared.Exceptions;
+using CityForum.Shared.ResultCodes;
 
 namespace CityForum.Services.Impelementation;
 
@@ -24,7 +26,7 @@ public class TopicService : ITopicService
     {
         if (topicsRepository.GetAll().Where(x => x.Name.ToLower() == topicName.ToLower()).Count() != 0)
         {
-            throw new Exception("Topic already exist");
+            throw new LogicException(ResultCode.TOPIC_ALREADY_EXISTS);
         }
     }
 
@@ -33,7 +35,7 @@ public class TopicService : ITopicService
         Topic? topic = topicsRepository.GetById(id);
         if (topic == null)
         {
-            throw new Exception("Topic not found");
+            throw new LogicException(ResultCode.TOPIC_NOT_FOUND);
         }
         return topic;
     }
@@ -44,7 +46,7 @@ public class TopicService : ITopicService
 
         if (usersRepository.GetById(createTopicModel.CreatedUserId) == null)
         {
-            throw new Exception("Created user not found");
+            throw new LogicException(ResultCode.USER_NOT_FOUND);
         }
 
         Topic topic = mapper.Map<Topic>(createTopicModel);

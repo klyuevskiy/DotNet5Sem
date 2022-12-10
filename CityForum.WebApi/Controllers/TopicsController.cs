@@ -2,6 +2,7 @@ using AutoMapper;
 using CityForum.Services.Abstract;
 using CityForum.Services.Models;
 using CityForum.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityForum.WebApi.Controllers
@@ -28,6 +29,7 @@ namespace CityForum.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult CreateTopic([FromBody] CreateTopicRequest createTopicRequest)
         {
             var validationResult = createTopicRequest.Validate();
@@ -74,6 +76,7 @@ namespace CityForum.WebApi.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("{id}")]
         public IActionResult DeleteTopic([FromRoute] Guid id)
         {
@@ -89,6 +92,7 @@ namespace CityForum.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("{id}")]
         public IActionResult UpdateTopic([FromRoute] Guid id, [FromBody] UpdateTopicRequest updateTopicRequest)
         {

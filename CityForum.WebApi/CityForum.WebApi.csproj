@@ -7,6 +7,11 @@
     <DocumentationFile>api.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Duende.IdentityServer" Version="6.1.7"/>
+    <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.1.7"/>
+    <PackageReference Include="Duende.IdentityServer.EntityFramework" Version="6.1.7"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.11"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.10"/>
     <PackageReference Include="FluentValidation" Version="11.2.2"/>
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2"/>
     <PackageReference Include="AutoMapper" Version="12.0.0"/>
@@ -25,5 +30,6 @@
     <ProjectReference Include="..\CityForum.Entities\CityForum.Entities.csproj" />
     <ProjectReference Include="..\CityForum.Repository\CityForum.Repository.csproj" />
     <ProjectReference Include="..\CityForum.Services\CityForum.Services.csproj" />
+    <ProjectReference Include="..\CityForum.Shared\CityForum.Shared.csproj"/>
   </ItemGroup>
 </Project>

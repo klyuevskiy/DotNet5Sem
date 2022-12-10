@@ -9,6 +9,12 @@
             Application builder extensions
             </summary>
         </member>
+        <member name="M:CityForum.WebApi.AppConfiguration.ApplicationExtensions.AppExtensions.UseAuthorizationConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use serilog configuration
+            </summary>
+            <param name="app"></param>
+        </member>
         <member name="M:CityForum.WebApi.AppConfiguration.ApplicationExtensions.AppExtensions.UseSerilogConfiguration(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             Use serilog configuration
@@ -25,6 +31,12 @@
             <summary>
             Services extensions
             </summary>
+        </member>
+        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddAuthorizationConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add serilog configuration
+            </summary>
+            <param name="builder"></param>
         </member>
         <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
@@ -44,7 +56,7 @@
             </summary>
             <param name="builder"></param>
         </member>
-        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:CityForum.WebApi.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Add swagger settings
             </summary>
@@ -55,6 +67,16 @@
             Configure versioning
             </summary>
             <param name="services"></param>
+        </member>
+        <member name="T:CityForum.WebApi.Controllers.AuthController">
+            <summary>
+            Auth endpoints
+            </summary>
+        </member>
+        <member name="M:CityForum.WebApi.Controllers.AuthController.#ctor(CityForum.Services.Abstract.IAuthService,AutoMapper.IMapper)">
+            <summary>
+            Auth controller
+            </summary>
         </member>
         <member name="T:CityForum.WebApi.Controllers.MessagesController">
             <summary>

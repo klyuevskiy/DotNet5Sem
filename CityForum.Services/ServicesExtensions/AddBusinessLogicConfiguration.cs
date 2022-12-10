@@ -15,5 +15,6 @@ public static partial class ServicesExtensions
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<ITopicService, TopicService>();
         services.AddScoped<IMessageService, MessageService>();
+        services.AddScoped<IAuthService, AuthService>();
     }
 }

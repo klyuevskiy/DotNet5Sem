@@ -3,6 +3,8 @@ using CityForum.Services.Abstract;
 using CityForum.Repository;
 using CityForum.Entities.Models;
 using AutoMapper;
+using CityForum.Shared.Exceptions;
+using CityForum.Shared.ResultCodes;
 
 namespace CityForum.Services.Impelementation;
 
@@ -34,7 +36,7 @@ public class MessageService : IMessageService
         Message? message = messagesRepository.GetById(id);
         if (message == null)
         {
-            throw new Exception("Message not found id");
+            throw new LogicException(ResultCode.MESSAGE_NOT_FOUND);
         }
         return message;
     }
@@ -43,11 +45,11 @@ public class MessageService : IMessageService
     {
         if (usersRepository.GetById(createMessageModel.SendingUserId) == null)
         {
-            throw new Exception("Sending user not found");
+            throw new LogicException(ResultCode.USER_NOT_FOUND);
         }
         if (topicsRepository.GetById(createMessageModel.TopicId) == null)
         {
-            throw new Exception("Topic not found");
+            throw new LogicException(ResultCode.TOPIC_NOT_FOUND);
         }
 
         Message message = mapper.Map<Message>(createMessageModel);
@@ -63,7 +65,7 @@ public class MessageService : IMessageService
     {
         if (topicsRepository.GetById(topicId) == null)
         {
-            throw new Exception("topic not found");
+            throw new LogicException(ResultCode.TOPIC_NOT_FOUND);
         }
 
         var messages = messagesRepository.GetAll().Where(x => x.TopicId == topicId);
@@ -81,7 +83,7 @@ public class MessageService : IMessageService
     {
         if (messagesRepository.GetById(id) == null)
         {
-            throw new Exception("Message not found");
+            throw new LogicException(ResultCode.MESSAGE_NOT_FOUND);
         }
 
         Message messageToUpdate = GetMessageFromRepository(id);

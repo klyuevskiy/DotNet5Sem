@@ -1,8 +1,10 @@
 using CityForum.WebApi.AppConfiguration.ServicesExtensions;
 using CityForum.WebApi.AppConfiguration.ApplicationExtensions;
+using CityForum.WebApi.AppConfiguration;
 using CityForum.Repository;
 using CityForum.Services;
 using Serilog;
+using CityForum.WebApi.AppConfiguration.Middlewares;
 
 var configuration = new ConfigurationBuilder()
 .AddJsonFile("appsettings.json", optional: false)
@@ -15,12 +17,15 @@ builder.Services.AddDbContextConfiguration(configuration);
 builder.Services.AddVersioningConfiguration();
 builder.Services.AddMapperConfiguration();
 builder.Services.AddControllers();
-builder.Services.AddSwaggerConfiguration();
+builder.Services.AddSwaggerConfiguration(configuration);
 builder.Services.AddRepositoryConfiguration();
 builder.Services.AddBusinessLogicConfiguration();
+builder.Services.AddAuthorizationConfiguration(configuration);
 
 
 var app = builder.Build();
+
+await RepositoryInitializer.InitializeRepository(app);
 
 app.UseSerilogConfiguration();
 
@@ -31,7 +36,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+app.UseAuthorizationConfiguration();
+app.UseMiddleware(typeof(ExceptionsMiddleware));
 app.MapControllers();
 
 try

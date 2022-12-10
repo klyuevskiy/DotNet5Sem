@@ -3,6 +3,8 @@ using CityForum.Repository;
 using CityForum.Entities.Models;
 using CityForum.Services.Abstract;
 using AutoMapper;
+using CityForum.Shared.Exceptions;
+using CityForum.Shared.ResultCodes;
 
 namespace CityForum.Services.Impelementation;
 
@@ -22,7 +24,7 @@ public class UserService : IUserService
         User? user = usersRepository.GetById(id);
         if (user == null)
         {
-            throw new Exception("User not found");
+            throw new LogicException(ResultCode.USER_NOT_FOUND);
         }
         return user;
     }
